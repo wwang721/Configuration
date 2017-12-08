@@ -1,0 +1,112 @@
+" Configuration file for vim
+set modelines=0		" CVE-2007-2438
+
+" Normally we use vim-extensions. If you want true vi-compatibility
+" remove change the following statements
+set nocompatible	" Use Vim defaults instead of 100% vi compatibility
+set backspace=2		" more powerful backspacing
+
+" Don't write backup file if vim is being called by "crontab -e"
+au BufWrite /private/tmp/crontab.* set nowritebackup nobackup
+" Don't write backup file if vim is being called by "chpass"
+au BufWrite /private/etc/pw.* set nowritebackup nobackup
+let skip_defaults_vim=1 
+vmap <C-c> :w !pbcopy<CR><CR>
+"复制到系统剪贴板
+set nocompatible "去掉有关vi一致性模式，避免以前版本的bug和局限 
+set nu!  "显示行号
+filetype on "检测文件的类型
+set history=1000 "记录历史的行数
+syntax on "语法高亮度显示
+set confirm "在处理未保存或只读文件的时候，弹出确认
+set autoindent "vim使用自动对齐，也就是把当前行的对齐格式应用到下一行(自动缩进）
+set cindent "（cindent是特别针对 C语言语法自动缩进）
+set smartindent "依据上面的对齐格式，智能的选择对齐方式，对于类似C语言编写上有用
+set tabstop=4 "设置tab键为4个空格，
+set shiftwidth =4 "设置当行之间交错时使用4个空格
+set ai! " 设置自动缩进
+set showmatch "设置匹配模式，类似当输入一个左括号时会匹配相应的右括号
+set ruler "在编辑过程中，在右下角显示光标位置的状态行
+set guioptions-=T "去除vim的GUI版本中得toolbar
+set vb t_vb= "当vim进行编辑时，如果命令错误，会发出警报，该设置去掉警报
+set nohls "默认情况下，寻找匹配是高亮度显示，该设置关闭高亮显示
+set encoding=utf-8
+set fileencodings=utf-8,ucs-bom,shift-jis,gb18030,gbk,gb2312,cp936,utf-16,big5,euc-jp,latin1 "编码设置
+set langmenu=cn
+set helplang=cn "语言设置
+set softtabstop=4
+set shiftwidth=4 "统一缩进为4
+set hlsearch
+set incsearch   "搜索逐字符高亮
+set gdefault    "行内替换
+set completeopt=preview,menu "代码补全
+set clipboard+=unnamed "共享剪贴板
+set mouse=a
+set selection=exclusive
+set selectmode=mouse,key "可以在buffer的任何地方使用鼠标（类似office中在工作区双击鼠标定位）
+set autowrite   "在切换buffer时自动保存当前文件
+set wildmenu	"增强模式中的命令行自动完成操作           
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'taglist.vim'
+Plugin 'winmanager'
+call vundle#end()  
+"检测文件类型
+filetype on
+"针对不同的文件采取不同的缩进方式
+filetype indent on
+"允许插件
+filetype plugin on
+filetype plugin indent on
+
+" NERDTree config
+" 显示行号
+let NERDTreeShowLineNumbers=1
+"显示增强
+let NERDChristmasTree=1
+"自动调整焦点
+let NERDTreeAutoCenter=1
+" 设置宽度
+let NERDTreeWinSize=20
+"高亮显示当前文件或目录
+let NERDTreeHightCursorline=1
+" 在终端启动vim时，共享NERDTree
+let g:nerdtree_tabs_open_on_console_startup=1
+"不显示'Bookmarks' label 'Press ? for help'
+let NERDTreeMinimalUI=1
+" 忽略一下文件的显示
+let NERDTreeIgnore=['\.pyc','\~$','\.swp']
+map <F3> :NERDTreeMirror<CR>
+map <F3> :NERDTreeToggle<CR>
+
+"ctags and taglist
+let Tlist_Ctags_Cmd="/usr/local/bin/ctags"
+let Tlist_WinWidt =10       "设置taglist的宽度
+let Tlist_Show_One_File=1
+let Tlist_Exit_OnlyWindow = 1
+let Tlist_Use_Right_Window=1
+"noremap <F4> :TlistToggle<CR>
+"设置taglist打开关闭的快捷键F4
+noremap <F4> :!ctags -R<CR>   
+"更新ctags标签文件快捷键设置F4
+
+"YouCompleteMe config
+let g:ycm_confirm_extra_conf=0      " 关闭加载.ycm_extra_conf.py提示
+"配置默认的ycm_extra_conf.py
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+let g:ycm_complete_in_comments = 1  "在注释输入中也能补全
+let g:ycm_complete_in_strings = 1   "在字符串输入中也能补全
+let g:ycm_use_ultisnips_completer = 1 "提示UltiSnips
+let g:ycm_collect_identifiers_from_comments_and_strings = 1   "注释和字符串中的文字也会被收入补全
+let g:ycm_collect_identifiers_from_tags_files = 1
+let g:ycm_seed_identifiers_with_syntax=1  "语言关键字补全
+
+"winmanager 
+let g:winManagerWidth=20
+let g:winManagerWindowLayout='NERDTree|TagList'  
+noremap <F2> :WMToggle<CR>  
+
+colorscheme molakai
