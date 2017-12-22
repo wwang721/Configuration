@@ -1,0 +1,51 @@
+#!/bin/bash
+
+### Job name
+#LJRS -N wwang
+
+### Queue name
+#LJRS -q dpool2
+
+### Number of nodes
+#LJRS -l nodes=c0112:ppn=1
+
+
+
+
+
+#LJRS -l     cput=1200:00:00
+#LJRS -l walltime=1200:00:00
+
+#LJRS -o stdout_file
+#LJRS -e stderr_file
+
+
+###LJRS -l mem=800mb
+
+
+JOBINFOR=$LJRS_JOBID
+MASTERNODE=`hostname`
+SCRATCHDIR=$LJRS_JOBID
+
+NCPU=`wc -l < $LJRS_NODEFILE`
+
+
+SERVER=$LJRS_O_HOST
+WORKDIR=$LJRS_O_WORKDIR
+MKDIR=/bin/mkdir
+RSH=/usr/bin/rsh
+CP=/bin/cp
+LAUNCH="mpiexec -machinefile $LJRS_NODEFILE -np $NCPU "
+PROGRAMEXEC="./test"
+
+
+${RSH} ${MASTERNODE}
+cd ${WORKDIR}
+${MKDIR} ${SCRATCHDIR}
+cd ${SCRATCHDIR}
+${CP} ${WORKDIR}/* .
+
+
+${LAUNCH} ${PROGRAMEXEC} > output
+~
+~
