@@ -25,9 +25,31 @@ alias py=python3
 alias tongjiphy='ssh wwang@10.30.13.121'
 
 # SSH file-Sync
+#setting
+ssyncsetssh()
+{
+	echo $1 > ~/.sshSync/ssh.txt;
+	echo Set SSH as: $1;
+}
+alias ssync-set-ssh=ssyncsetssh
+
+ssyncsettime()
+{
+	echo $1 > ~/.sshSync/syncTime.txt;
+	echo Set sync-time interval as: $1s;
+}
+alias ssync-set-time=ssyncsettime
+
+ssyncsettarget()
+{
+	echo $1 > ~/.sshSync/targetDir.txt;
+	echo Set target as: $1;
+}
+alias ssync-set-target=ssyncsettarget
+
 alias ssync='~/.sshSync/sync.sh'	#sync begin
 alias ssyncend='~/.sshSync/syncEnd.sh'	#sync end
-alias ssync-smi='echo "  UID   PID  PPID   C STIME   TTY           TIME CMD" && echo ============================================================================= && ps -ef|grep scp.sh|grep -v grep'	#States
+alias ssync-smi='echo "*** SYNC-INFORMATION ***" && echo ----------------------------------------------------------------------------- && echo -n "SSH:                  " && cat ~/.sshSync/ssh.txt && echo -n "Sync-Time Interval:   " && echo -n `cat ~/.sshSync/syncTime.txt` && echo s && echo -n "Target Path:          " && cat ~/.sshSync/targetDir.txt && echo && echo ============================================================================= && echo "  UID   PID  PPID   C STIME   TTY           TIME CMD" && echo ============================================================================= && ps -ef|grep scp.sh|grep -v grep && echo ============================================================================='	#States
 alias ssync-pid='echo -n PID:" "[  && echo -n `cat ~/.sshSync/.config/scpPID.txt` && echo ]'	#PID
 
 #SSH file download and upload
