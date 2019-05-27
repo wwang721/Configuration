@@ -50,7 +50,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 Plugin 'taglist.vim'
 Plugin 'winmanager'
 call vundle#end()  
@@ -104,9 +104,19 @@ let g:ycm_collect_identifiers_from_comments_and_strings = 1   "注释和字符�
 let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_seed_identifiers_with_syntax=1  "语言关键字补全
 
+
 "winmanager 
-let g:winManagerWidth=20
+let g:winManagerWidth=25
 let g:winManagerWindowLayout='NERDTree|TagList'  
 noremap <F2> :WMToggle<CR>  
 
-colorscheme molakai
+
+
+colorscheme molokai
+
+set t_Co=256
+set background=dark
+
+
+
+
