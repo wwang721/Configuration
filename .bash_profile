@@ -70,36 +70,36 @@ alias uld=uploadFile_to_ssh_server
 #==============================================================================
 downloadFile_from_nestingSSH_server()
 {
-	ssh 10.30.13.121 'mkdir .temporaryDownload_files';
+	ssh 10.30.13.121 'mkdir .temporaryDownload_files && rm -rf .temporaryDownload_files/*';
   	ssh 10.30.13.121 "scp -r 192.168.1.22:$1 ~/.temporaryDownload_files";
-	scp -r 10.30.13.121:~/.temporaryDownload_files/$1 $2;
+	scp -r 10.30.13.121:~/.temporaryDownload_files/* $2;
 	ssh 10.30.13.121 'rm -rf .temporaryDownload_files'
 }
 alias dld2=downloadFile_from_nestingSSH_server
 
 uploadFile_to_nestingSSH_server()
 {
-	ssh 10.30.13.121 'mkdir .temporaryUpload_files';
+	ssh 10.30.13.121 'mkdir .temporaryUpload_files && rm -rf .temporaryDownload_files/*';
 	scp -r $1 10.30.13.121:~/.temporaryUpload_files;
-  	ssh 10.30.13.121 "scp -r ~/.temporaryUpload_files/$1 192.168.1.22:$2";
+  	ssh 10.30.13.121 "scp -r ~/.temporaryUpload_files/* 192.168.1.22:$2";
 	ssh 10.30.13.121 'rm -rf .temporaryUpload_files'
 }
 alias uld2=uploadFile_to_nestingSSH_server
 #-------------------------------------------------------------------------------------
 downloadFile_from_nestingSSH_server2()
 {
-	ssh 10.30.13.121 'mkdir .temporaryDownload_files';
+	ssh 10.30.13.121 'mkdir .temporaryDownload_files && rm -rf .temporaryDownload_files/*';
   	ssh 10.30.13.121 "scp -r root@192.168.1.22:$1 ~/.temporaryDownload_files";
-	scp -r 10.30.13.121:~/.temporaryDownload_files/$1 $2;
+	scp -r 10.30.13.121:~/.temporaryDownload_files/* $2;
 	ssh 10.30.13.121 'rm -rf .temporaryDownload_files'
 }
 alias dld2-root=downloadFile_from_nestingSSH_server2
 
 uploadFile_to_nestingSSH_server2()
 {
-	ssh 10.30.13.121 'mkdir .temporaryUpload_files';
+	ssh 10.30.13.121 'mkdir .temporaryUpload_files && rm -rf .temporaryDownload_files/*';
 	scp -r $1 10.30.13.121:~/.temporaryUpload_files;
-  	ssh 10.30.13.121 "scp -r ~/.temporaryUpload_files/$1 root@192.168.1.22:$2";
+  	ssh 10.30.13.121 "scp -r ~/.temporaryUpload_files/* root@192.168.1.22:$2";
 	ssh 10.30.13.121 'rm -rf .temporaryUpload_files'
 }
 alias uld2-root=uploadFile_to_nestingSSH_server2
