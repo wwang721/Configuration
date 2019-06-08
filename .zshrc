@@ -106,7 +106,9 @@ source $ZSH/oh-my-zsh.sh
 #
 #
 
-#FBI WARNING
+#FBI WARNING(line 113 - 156) 
+#Vim Command ":113,156s/^/# /" to comment this whole code block. ("^" means the head of a line.)
+#if you have commented, you can use Vim Command ":113,156s/# //" to cancel the comment.
 #===================================================================================
 _COLUMNS=$(tput cols)
 _MESSAGE=" FBI Warining "
