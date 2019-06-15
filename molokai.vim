@@ -48,8 +48,8 @@ hi Error           guifg=#E6DB74 guibg=#1E0010
 hi ErrorMsg        guifg=#F92672 guibg=#232526 gui=bold
 hi Exception       guifg=#A6E22E               gui=bold
 hi Float           guifg=#AE81FF
-hi FoldColumn      guifg=#465457 guibg=#000000
-hi Folded          guifg=#465457 guibg=#000000
+hi FoldColumn      guifg=#465457 guibg=bg
+hi Folded          guifg=#465457 guibg=bg
 hi Function        guifg=#A6E22E
 hi Identifier      guifg=#FD971F
 hi Ignore          guifg=#808080 guibg=bg
@@ -158,7 +158,7 @@ if &t_Co > 255
    hi Delimiter       ctermfg=241
 
    hi DiffAdd                     ctermbg=24
-   hi DiffChange      ctermfg=181 ctermbg=239
+   hi DiffChange      ctermfg=181 ctermbg=2
    hi DiffDelete      ctermfg=162 ctermbg=53
    hi DiffText                    ctermbg=102 cterm=bold
 
@@ -167,8 +167,9 @@ if &t_Co > 255
    hi ErrorMsg        ctermfg=199 ctermbg=16    cterm=bold
    hi Exception       ctermfg=118               cterm=bold
    hi Float           ctermfg=135
-   hi FoldColumn      ctermfg=67  ctermbg=16
-   hi Folded          ctermfg=67  ctermbg=16
+   hi FoldColumn      ctermfg=67  ctermbg=none
+   hi Folded          ctermfg=67  ctermbg=none
+   "hi Folded			ctermfg=67 ctermbg=16
    hi Function        ctermfg=118
    hi Identifier      ctermfg=208               cterm=none
    hi Ignore          ctermfg=244 ctermbg=232
@@ -220,16 +221,17 @@ if &t_Co > 255
    hi Type            ctermfg=81                cterm=none
    hi Underlined      ctermfg=244               cterm=underline
 
-   hi VertSplit       ctermfg=244 ctermbg=232   cterm=bold
+   hi VertSplit       ctermfg=244 ctermbg=none   cterm=bold
    hi VisualNOS                   ctermbg=238
    hi Visual                      ctermbg=235
    hi WarningMsg      ctermfg=231 ctermbg=238   cterm=bold
-   hi WildMenu        ctermfg=81  ctermbg=16
+   hi WildMenu        ctermfg=81  ctermbg=none
 
    hi Comment         ctermfg=59
    hi CursorColumn                ctermbg=236
    hi ColorColumn                 ctermbg=236
-   hi LineNr          ctermfg=250 ctermbg=236
+   hi LineNr          ctermfg=250 ctermbg=none
+   "hi LineNr			ctermfg=250 ctermbg=236
    hi NonText         ctermfg=59
 
    hi SpecialKey      ctermfg=59
