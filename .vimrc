@@ -17,6 +17,7 @@ filetype on "检测文件的类型
 set history=1000 "记录历史的行数
 syntax on "语法高亮度显示
 set nu! "显示行号
+set cursorline "高亮光标所在行
 set confirm "在处理未保存或只读文件的时候，弹出确认
 set autoindent "vim使用自动对齐，也就是把当前行的对齐格式应用到下一行(自动缩进）
 set cindent "（cindent是特别针对 C语言语法自动缩进）
@@ -165,7 +166,7 @@ let g:winManagerWindowLayout='NERDTree|TagList'
 noremap <F2> :WMToggle<CR>  
 
 "vim-latex-live-preview
-autocmd Filetype tex setl updatetime=500	"PDF刷新时间(单位:ms)
+autocmd Filetype tex setl updatetime=200	"PDF刷新时间(单位:ms)
 let g:livepreview_previewer = 'open -a Skim'	"用Skim打开PDF 
 let g:livepreview_engine = 'xelatex'	"用xelatex进行编译，默认为pdflatex
 
