@@ -139,12 +139,12 @@ if &t_Co > 255
       hi Normal                   ctermbg=none
 	  "hi Normal					ctermbg=234
 	  "modified for iTerm2 background
-      hi CursorLine               ctermbg=235   cterm=none
-      hi CursorLineNr ctermfg=208               cterm=none
-   else
+      hi CursorLine               ctermbg=236   cterm=none 
+      hi CursorLineNr ctermfg=208      ctermbg=236     cterm=bold
+  else
       hi Normal       ctermfg=252 ctermbg=233
-      hi CursorLine               ctermbg=234   cterm=none
-      hi CursorLineNr ctermfg=208               cterm=none
+      hi CursorLine               ctermbg=235  cterm=none  
+      hi CursorLineNr ctermfg=208	           cterm=none 
    endif
    hi Boolean         ctermfg=135
    hi Character       ctermfg=144
@@ -273,8 +273,9 @@ if &t_Co > 255
        hi NonText         ctermfg=239
        hi SpecialKey      ctermfg=239
    endif
-end
+end 
 
 " Must be at the end, because of ctermbg=234 bug.
 " https://groups.google.com/forum/#!msg/vim_dev/afPqwAFNdrU/nqh6tOM87QUJ
 set background=dark
+
