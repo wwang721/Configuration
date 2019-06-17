@@ -210,8 +210,12 @@ snippet tit "\title{}"
 \title{${1}}$0
 endsnippet
 
+snippet mkt "\maketitle" bA
+\maketitle
+endsnippet
+
 snippet aut "\author"
-\author{${1}}$0
+\author{${1:Wei Wang}}$0
 endsnippet
 
 snippet cha "\chapter"
@@ -312,7 +316,7 @@ snippet conf "default configuration" b
 $0
 endsnippet
 
-snippet date "date" 
+snippet date "date" i 
 `date +%D`${0}
 endsnippet
 
