@@ -93,7 +93,7 @@ ${VISUAL}
 */$0
 endsnippet
 
-snippet ifn "ifndef" bA
+snippet head "ifndef" b
 #ifndef _${1:HEAD}_H_
 #define _$1_H_
 
@@ -102,6 +102,14 @@ ${0}
 #endif /* _$1_H_ */
 endsnippet
 
+snippet sym "ifndef" b
+#ifndef ${1:Symbol}
+#define $1 ${2:VALUE}
+
+${0}
+
+#endif /* $1 */
+endsnippet
 
 
 
