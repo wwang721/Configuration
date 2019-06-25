@@ -303,6 +303,7 @@ snippet conf "default configuration" b
 %\usepackage{graphicx}%include figure files
 %\usepackage{subfigure}
 \usepackage{amsmath}%add special math symbols
+\usepackage{amssymb}
 \usepackage{bm}%bold math
 %\usepackage{xfrac}%add special fraction supports
 \usepackage{color}
@@ -320,4 +321,17 @@ snippet date "date" i
 `date +%D`${0}
 endsnippet
 
+snippet par "partial" i
+\partial${0}
+endsnippet
+
+snippet inf "infinity" i
+\infty${0}
+endsnippet
+
+snippet arr "array" b
+\begin{array}{${1:l}}
+${2}
+\end{array}$0
+endsnippet
 
