@@ -1,6 +1,6 @@
 #
 #	Created by WW on 2019-6-27.
-#	Copyright © WW. All right reserved.
+#	Copyright © WW. All rights reserved.
 #
 
 #required cmake version at least
