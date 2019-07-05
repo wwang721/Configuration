@@ -14,6 +14,7 @@ vmap <C-c> :w !pbcopy<CR><CR>
 "复制到系统剪贴板
 set nocompatible "去掉有关vi一致性模式，避免以前版本的bug和局限
 set nu!  "显示行号
+set cursorline
 filetype on "检测文件的类型
 set history=1000 "记录历史的行数
 syntax on "语法高亮度显示
@@ -141,8 +142,8 @@ let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 "
 "
 "
+set t_Co=256
 colorscheme molokai
 
-set t_Co=256
 
 
