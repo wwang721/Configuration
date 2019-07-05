@@ -140,7 +140,7 @@ if &t_Co > 255
 	  "hi Normal					ctermbg=234
 	  "modified for iTerm2 background
       hi CursorLine               ctermbg=236   cterm=none 
-      hi CursorLineNr ctermfg=208      ctermbg=236     cterm=bold
+      hi CursorLineNr ctermfg=11      ctermbg=239     cterm=bold
   else
       hi Normal       ctermfg=252 ctermbg=233
       hi CursorLine               ctermbg=235  cterm=none  
