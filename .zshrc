@@ -290,6 +290,7 @@ alias vpn="open -a ShadowSocksX"
 #Interesting alias
 alias toilet="toilet -t -f mono12"
 alias train="sl"
+alias tree="tree -C"
 
 # Setting PATH for MacVim
 export PATH="/Applications/MacVim.app/Contents/bin:$PATH"
