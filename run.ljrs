@@ -9,8 +9,8 @@
 ### Number of nodes
 #LJRS -l nodes=c0112:ppn=1
 
-
-
+### Mail inform
+#LJRS -M w_w19980721@foxmail.com
 
 
 #LJRS -l     cput=1200:00:00
