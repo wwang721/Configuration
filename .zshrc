@@ -107,24 +107,20 @@ source $ZSH/oh-my-zsh.sh
 #
 #
 
-#FBI WARNING(line 114 - 175) 
-#Vim Command ":114,175s/^/# /" to comment this whole code block. ("^" means the head of a line.)
-#if you have commented, you can use Vim Command ":114,175s/# //" to cancel the comment.
+#FBI WARNING(line 114 - 168) 
+#Vim Command ":114,168s/^/# /" to comment this whole code block. ("^" means the head of a line.)
+#if you have commented, you can use Vim Command ":114,168s/# //" to cancel the comment.
 #===================================================================================
+_COLUMNS=$(tput cols)
+_MESSAGE="======================================================================================================================="
+y=$(( ( $_COLUMNS - ${#_MESSAGE} )  / 2 ))
+spaces=$(printf "%-${y}s" " ")
+echo -e "${spaces}${_MESSAGE}"
+
 _COLUMNS=$(tput cols)
 _MESSAGE=" FBI Warining "
 y=$(( ( $_COLUMNS - ${#_MESSAGE} )  / 2 ))
 spaces=$(printf "%-${y}s" " ")
-
-counter=1
-echo -n "    "
-while [ $counter -le $(($_COLUMNS-8)) ]
-do
-	echo -n "="
-	let counter++
-done
-echo ""
-
 echo " " 
 echo -e "${spaces}\033[41;37;5m FBI WARNING \033[0m"
 echo " "
@@ -165,14 +161,11 @@ spaces=$(printf "%-${y}s" " ")
 echo -e "${spaces}${_MESSAGE}"
 echo " "
 
-counter=1
-echo -n "    "
-while [ $counter -le $(($_COLUMNS-8)) ]
-do
-	echo -n "="
-	let counter++
-done
-echo ""
+_COLUMNS=$(tput cols)
+_MESSAGE="======================================================================================================================="
+y=$(( ( $_COLUMNS - ${#_MESSAGE} )  / 2 ))
+spaces=$(printf "%-${y}s" " ")
+echo -e "${spaces}${_MESSAGE}"
 #===================================================================================
 
 #Cow{say or think}
@@ -294,6 +287,9 @@ alias tree="tree -C"
 
 # Setting PATH for MacVim
 export PATH="/Applications/MacVim.app/Contents/bin:$PATH"
+
+# Setting PATH for Blender
+export PATH="/Applications/Blender.app/Contents/MacOS:$PATH" 
 
 #SSH language setting
 export LANG="zh_CN.UTF-8"
