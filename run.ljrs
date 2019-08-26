@@ -47,5 +47,7 @@ ${CP} ${WORKDIR}/* .
 
 ###LD_LIBRARY_PATH=./ 
 ${LAUNCH} ${PROGRAMEXEC} > output
+
+wait
 ~
 ~
