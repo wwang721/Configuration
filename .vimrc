@@ -38,10 +38,11 @@ set softtabstop=4
 set shiftwidth=4 "统一缩进为4
 set hlsearch
 set foldenable "代码折叠
-set foldmethod=syntax "代码折叠方式
+set foldmethod=syntax "代码折叠方式:syntax按C语法折叠，indent按缩进折叠适用于python
+"set fdm=indent 
 set foldlevelstart=99 "打开文件时默认不折叠代码
 nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR> 
-													"用空格键来代替zc和zo来开关折叠
+					"用空格键来代替zc和zo来开关折叠
 set incsearch   "搜索逐字符高亮
 set gdefault    "行内替换
 set completeopt=preview,menu "代码补全
