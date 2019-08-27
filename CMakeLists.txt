@@ -31,6 +31,10 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g")
 file(GLOB LIB_HEADERS *.h)
 file(GLOB LIB_SOURCES *.cpp *.c)
 
+#link current CMakeLists.txt directory, 
+#then you can target_link_libraries() in these directories
+#link_directories(${CMAKE_CURRENT_SOURCE_DIR})
+
 #compile and creat new library (SHARED or STATIC)
 add_library(MYLIB STATIC ${LIB_HEADERS} ${LIB_SOURCES})
 
@@ -53,3 +57,7 @@ cuda_add_executable(magnon.exe ${SOURCES} ${HEADERS})
 
 #link the executable file with all libraries
 target_link_libraries(magnon.exe ${EXTRA_LIBS})
+
+#if you already have some libraries, you could link them after link_directories()
+#target_link_libraries(magnon.exe libnrutil.a)
+
