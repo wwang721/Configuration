@@ -143,6 +143,10 @@ let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
+if has("gui_macvim") 
+	set transparency=5
+endif
+
 "=====================================================================================
 "
 " spell correction
