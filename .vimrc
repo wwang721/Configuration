@@ -144,7 +144,9 @@ let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
 if has("gui_macvim") 
-	set transparency=5
+	set transparency=10
+	set gcr=a:ver25-Cursor/lCursor	" GUI Cursor 
+	set guioptions-=L	" GUI left scrollbar hidden
 endif
 
 "=====================================================================================
