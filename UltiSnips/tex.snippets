@@ -1,4 +1,4 @@
-snippet beg "begin{} / end{}" bA
+snippet beg "begin{} / end{}" b
 \begin{$1}
 	$2
 \end{$1}$0
@@ -244,10 +244,6 @@ snippet ( "(...)" Ai
 (${1})$0
 endsnippet
 
-snippet < "<...>" Ai
-<${1}>$0
-endsnippet
-
 snippet " "..." Ai
 "${1}"$0
 endsnippet
@@ -260,18 +256,16 @@ snippet $ "$...$ inline" i
 $${1}$${0}
 endsnippet
 
-snippet $$ "$$...$$"
-$$
-	${1}
-$$${0}
-endsnippet
-
 snippet fl "\flushleft"
 {\flushleft ${0}}
 endsnippet
 
 snippet fr "\flushright"
 {\flushright ${0}}
+endsnippet
+
+snippet df "fraction" i
+\dfrac{${1:1}}{${2:2}}${0}
 endsnippet
 
 snippet / "fraction" i
@@ -334,4 +328,12 @@ snippet arr "array" b
 ${2}
 \end{array}$0
 endsnippet
+
+snippet rmd "mathrm d" i
+\mathrm{d}$0
+endsnippet
+
+
+
+
 
