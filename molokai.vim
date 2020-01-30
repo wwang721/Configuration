@@ -48,8 +48,8 @@ hi Error           guifg=#E6DB74 guibg=#1E0010
 hi ErrorMsg        guifg=#F92672 guibg=#232526 gui=bold
 hi Exception       guifg=#A6E22E               gui=bold
 hi Float           guifg=#AE81FF
-hi FoldColumn      guifg=#465457 guibg=bg
-hi Folded          guifg=#465457 guibg=bg
+hi FoldColumn      guifg=#6188ad guibg=bg
+hi Folded          guifg=#6188ad guibg=bg
 hi Function        guifg=#A6E22E
 hi Identifier      guifg=#FD971F
 hi Ignore          guifg=#808080 guibg=bg
@@ -114,10 +114,10 @@ if s:molokai_original == 1
 	"hi Normal          guifg=#F8F8F2 guibg=#272822
    hi Comment         guifg=#75715E
    hi CursorLine                    guibg=#303030
-   hi CursorLineNr    guifg=#FD971F               gui=none
+   hi CursorLineNr    guifg=#debf30 guibg=#303030 gui=none
    hi CursorColumn                  guibg=#3E3D32
    hi ColorColumn                   guibg=#3B3A32
-   hi LineNr          guifg=#BCBCBC guibg=#303030
+   hi LineNr          guifg=#BCBCBC
    hi NonText         guifg=#75715E
    hi SpecialKey      guifg=#75715E
 else
