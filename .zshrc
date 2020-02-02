@@ -1,4 +1,3 @@
-clear
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -111,66 +110,66 @@ source $ZSH/oh-my-zsh.sh
 #Vim Command ":114,168s/^/# /" to comment this whole code block. ("^" means the head of a line.)
 #if you have commented, you can use Vim Command ":114,168s/# //" to cancel the comment.
 #===================================================================================
-_COLUMNS=$(tput cols)
-_MESSAGE="======================================================================================================================="
-y=$(( ( $_COLUMNS - ${#_MESSAGE} )  / 2 ))
-spaces=$(printf "%-${y}s" " ")
-echo -e "${spaces}${_MESSAGE}"
-
-_COLUMNS=$(tput cols)
-_MESSAGE=" FBI Warining "
-y=$(( ( $_COLUMNS - ${#_MESSAGE} )  / 2 ))
-spaces=$(printf "%-${y}s" " ")
-echo " " 
-echo -e "${spaces}\033[41;37;5m FBI WARNING \033[0m"
-echo " "
-_COLUMNS=$(tput cols)
-_MESSAGE="Ferderal Law provides severe civil and criminal penalties for"
-y=$(( ( $_COLUMNS - ${#_MESSAGE} )  / 2 ))
-spaces=$(printf "%-${y}s" " ")
-echo -e "${spaces}${_MESSAGE}"
-
-_COLUMNS=$(tput cols)
-_MESSAGE="the unauthorized reproduction, distribution, or exhibition of"
-y=$(( ( $_COLUMNS - ${#_MESSAGE} )  / 2 ))
-spaces=$(printf "%-${y}s" " ")
-echo -e "${spaces}${_MESSAGE}"
-
-_COLUMNS=$(tput cols)
-_MESSAGE="copyrighted motion pictures (Title 17, United States Code,"
-y=$(( ( $_COLUMNS - ${#_MESSAGE} )  / 2 ))
-spaces=$(printf "%-${y}s" " ")
-echo -e "${spaces}${_MESSAGE}"
-
-_COLUMNS=$(tput cols)
-_MESSAGE="Sections 501 and 508). The Federal Bureau of Investigation"
-y=$(( ( $_COLUMNS - ${#_MESSAGE} )  / 2 ))
-spaces=$(printf "%-${y}s" " ")
-echo -e "${spaces}${_MESSAGE}"
-
-_COLUMNS=$(tput cols)
-_MESSAGE="investigates allegations of criminal copyright infringement"
-y=$(( ( $_COLUMNS - ${#_MESSAGE} )  / 2 ))
-spaces=$(printf "%-${y}s" " ")
-echo -e "${spaces}${_MESSAGE}"
-
-_COLUMNS=$(tput cols)
-_MESSAGE="(Title 17, United States Code, Section 506)."
-y=$(( ( $_COLUMNS - ${#_MESSAGE} )  / 2 ))
-spaces=$(printf "%-${y}s" " ")
-echo -e "${spaces}${_MESSAGE}"
-echo " "
-
-_COLUMNS=$(tput cols)
-_MESSAGE="======================================================================================================================="
-y=$(( ( $_COLUMNS - ${#_MESSAGE} )  / 2 ))
-spaces=$(printf "%-${y}s" " ")
-echo -e "${spaces}${_MESSAGE}"
+# _COLUMNS=$(tput cols)
+# _MESSAGE="======================================================================================================================="
+# y=$(( ( $_COLUMNS - ${#_MESSAGE} )  / 2 ))
+# spaces=$(printf "%-${y}s" " ")
+# echo -e "${spaces}${_MESSAGE}"
+# 
+# _COLUMNS=$(tput cols)
+# _MESSAGE=" FBI Warining "
+# y=$(( ( $_COLUMNS - ${#_MESSAGE} )  / 2 ))
+# spaces=$(printf "%-${y}s" " ")
+# echo " " 
+# echo -e "${spaces}\033[41;37;5m FBI WARNING \033[0m"
+# echo " "
+# _COLUMNS=$(tput cols)
+# _MESSAGE="Ferderal Law provides severe civil and criminal penalties for"
+# y=$(( ( $_COLUMNS - ${#_MESSAGE} )  / 2 ))
+# spaces=$(printf "%-${y}s" " ")
+# echo -e "${spaces}${_MESSAGE}"
+# 
+# _COLUMNS=$(tput cols)
+# _MESSAGE="the unauthorized reproduction, distribution, or exhibition of"
+# y=$(( ( $_COLUMNS - ${#_MESSAGE} )  / 2 ))
+# spaces=$(printf "%-${y}s" " ")
+# echo -e "${spaces}${_MESSAGE}"
+# 
+# _COLUMNS=$(tput cols)
+# _MESSAGE="copyrighted motion pictures (Title 17, United States Code,"
+# y=$(( ( $_COLUMNS - ${#_MESSAGE} )  / 2 ))
+# spaces=$(printf "%-${y}s" " ")
+# echo -e "${spaces}${_MESSAGE}"
+# 
+# _COLUMNS=$(tput cols)
+# _MESSAGE="Sections 501 and 508). The Federal Bureau of Investigation"
+# y=$(( ( $_COLUMNS - ${#_MESSAGE} )  / 2 ))
+# spaces=$(printf "%-${y}s" " ")
+# echo -e "${spaces}${_MESSAGE}"
+# 
+# _COLUMNS=$(tput cols)
+# _MESSAGE="investigates allegations of criminal copyright infringement"
+# y=$(( ( $_COLUMNS - ${#_MESSAGE} )  / 2 ))
+# spaces=$(printf "%-${y}s" " ")
+# echo -e "${spaces}${_MESSAGE}"
+# 
+# _COLUMNS=$(tput cols)
+# _MESSAGE="(Title 17, United States Code, Section 506)."
+# y=$(( ( $_COLUMNS - ${#_MESSAGE} )  / 2 ))
+# spaces=$(printf "%-${y}s" " ")
+# echo -e "${spaces}${_MESSAGE}"
+# echo " "
+# 
+# _COLUMNS=$(tput cols)
+# _MESSAGE="======================================================================================================================="
+# y=$(( ( $_COLUMNS - ${#_MESSAGE} )  / 2 ))
+# spaces=$(printf "%-${y}s" " ")
+# echo -e "${spaces}${_MESSAGE}"
 #===================================================================================
 
 #Cow{say or think}
-print -P "%B%F{red}Daily CowThink:%b%f"
-fortune|cowthink
+# print -P "%B%F{red}Daily CowThink:%b%f"
+# fortune|cowthink
 
 # Setting PATH for Python 3.6
 # The original version is saved in .bash_profile.pysave
@@ -291,11 +290,14 @@ export PATH="/Applications/MacVim.app/Contents/bin:$PATH"
 # Setting PATH for Blender
 export PATH="/Applications/Blender.app/Contents/MacOS:$PATH" 
 
+# Setting PATH for HDF5
+alias h5c++="/usr/local/bin/h5c++"
+alias h5dump="/usr/local/bin/h5dump"
+
 #SSH language setting
 export LANG="zh_CN.UTF-8"
 export LC_ALL="zh_CN.UTF-8"
 
 #the following command line must be put at the end of the file .zshrc
 source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
 
