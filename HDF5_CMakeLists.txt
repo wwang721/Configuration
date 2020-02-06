@@ -1,0 +1,52 @@
+#
+#    Created by WW on 2020-02-06.
+#    Copyright © WW. All rights reserved.
+#
+#    This is a general template illustrates how to use h5c++ in CMake file.
+#
+
+cmake_minimum_required(VERSION 2.80)  # required cmake version at least
+
+project(hdf5Test)  # project name
+
+set(CMAKE_CXX_STANDARD 11)  # Cmake C++ compiler will use C++ 11
+
+# Method 1: 
+# Change CMAKE_CXX_COMPILER to h5c++.
+# set(CMAKE_CXX_COMPILER "/usr/local/bin/h5c++")
+
+# Method 2:
+# Add the HDF5-needed header-files and libraries.
+
+# Set all <inc> directories for include_directories()
+set(INC_DIR
+        /usr/local/opt/szip/include
+        /usr/local/Cellar/hdf5/1.10.6/include)
+
+# Set all <path> directories for link_directories()
+set(LINK_DIR
+        /usr/local/Cellar/hdf5/1.10.6/lib
+        /usr/local/opt/szip/lib)
+
+include_directories(${INC_DIR}) # equals to -I<inc> flag of gcc
+
+link_directories(${LINK_DIR}) # equals to -L<path> flag of gcc
+
+# Compile and creat the executable file.
+add_executable(hdf5Test main.cpp)
+
+# Set all libraries needed in ${LINK_DIR},
+# only <name> of lib<name>.a/so is enough.
+set(HDF5_LIB
+        hdf5_hl_cpp
+        hdf5_cpp
+        hdf5_hl
+        hdf5
+        sz
+        z
+        dl
+        m)
+
+# Link the executable file with libraries,
+# which equals to -l<libname> flag of gcc.
+target_link_libraries(hdf5Test ${HDF5_LIB})
