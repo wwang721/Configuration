@@ -2,7 +2,8 @@
 
 TIME=`env LC_ALL=en_US.en date +'%H:%M:%S, %A, %m/%d/%Y %Z'`
 
-TEXT="Hi Wei,\n\nThe job (PID: $1 $2) you submitted have been finished at $TIME. Please go back to check the results as soon as possible!\n\nFaithfully,\nYour Mac"
+TEXT="Hi Wei,\n\nThe job (PID: $1 $2) you submitted have been finished at $TIME. Please\
+ go back to check the results as soon as possible!\n\nFaithfully,\nYour Mac"
 
 # Mail subject
 SUB="Update!"
