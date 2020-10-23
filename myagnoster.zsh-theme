@@ -94,6 +94,13 @@ prompt_context() {
   fi
 }
 
+prompt_conda_env() {
+  if [[ "$CONDA_DEFAULT_ENV" ]]; then
+  #prompt_segment black default "%(!.%{%F{yellow}%}.)%n@%m"
+    prompt_segment green default "%{%F{black}%}($CONDA_DEFAULT_ENV)"
+  fi
+}
+
 # Git: branch/detached head, dirty status
 prompt_git() {
   (( $+commands[git] )) || return
@@ -206,7 +213,7 @@ prompt_dir() {
 prompt_virtualenv() {
   local virtualenv_path="$VIRTUAL_ENV"
   if [[ -n $virtualenv_path && -n $VIRTUAL_ENV_DISABLE_PROMPT ]]; then
-    prompt_segment blue black "(`basename $virtualenv_path`)"
+    prompt_segment black default "(`basename $virtualenv_path`)"
   fi
 }
 
@@ -243,6 +250,7 @@ build_prompt() {
   prompt_status
   prompt_virtualenv
   prompt_aws
+  prompt_conda_env
   prompt_context
   prompt_dir
   prompt_git
