@@ -95,9 +95,9 @@ prompt_context() {
 }
 
 prompt_conda_env() {
-  if [[ "$CONDA_DEFAULT_ENV" ]]; then
+  if [[ "$CONDA_DEFAULT_ENV" != "base" ]]; then
   #prompt_segment black default "%(!.%{%F{yellow}%}.)%n@%m"
-    prompt_segment green default "%{%F{black}%}($CONDA_DEFAULT_ENV)"
+    prompt_segment green default "%{%F{black}%}$CONDA_DEFAULT_ENV"
   fi
 }
 
